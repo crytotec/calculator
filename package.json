@@ -1,0 +1,20 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "build:watch": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "postinstall": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
+  "engines": {
+    "node": ">=14.x"
+  }
+}
