@@ -1,27 +1,23 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const display = document.getElementById('calculator-display');
-    const buttons = document.querySelectorAll('.dd span');
-    let displayData = '';
+document.addEventListener("DOMContentLoaded", function () {
+    const calculator = document.getElementById('calculator-display');
+    const buttons = document.querySelectorAll('.dd span'); 
 
+    let display='';
     buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            const value = button.getAttribute('data-value'); 
-
+        button.addEventListener('click', ()=>{
+            const value= button.getAttribute('data-value');
             if (value === 'C') {
-                displayData = '';
-                display.value = '';
-            } else if (value === '=') {
+              display='';   
+            }else if (value === '=') {
                 try {
-                    displayData = eval(displayData);
-                    display.value = displayData;
+                    display=eval(display); 
                 } catch (error) {
-                    display.value = 'Error';
-                    displayData = ''; 
+                    display ='Error';
                 }
-            } else {
-                displayData += value;
-                display.value = displayData;
+            }else{
+                display+=value;
             }
-        });
+            calculator.value=display;
+        })
     });
-});
+})    
